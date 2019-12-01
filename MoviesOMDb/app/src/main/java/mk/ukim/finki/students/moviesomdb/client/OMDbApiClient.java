@@ -1,0 +1,25 @@
+package mk.ukim.finki.students.moviesomdb.client;
+
+import mk.ukim.finki.students.moviesomdb.repository.OMDbMoviesService;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class  OMDbApiClient {
+
+    private static Retrofit retrofit = null;
+
+    private static Retrofit getRetrofit() {
+        if(retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl("http://www.omdbapi.com/?apikey=1c1fb2c4")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
+
+    public static OMDbMoviesService getService() {
+        return getRetrofit().create(OMDbMoviesService.class);
+    }
+
+}
