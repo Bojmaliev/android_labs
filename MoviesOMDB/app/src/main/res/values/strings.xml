@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MoviesOMDb</string>
+    <string name="app_name">List Movies</string>
     <string name="top_menu_item_1">menu1</string>
     <string name="top_menu_item_2">menu2</string>
     <string name="top_menu_item_3">menu3</string>

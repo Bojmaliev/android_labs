@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mk.ukim.finki.students.moviesomdb">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,8 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MoviesActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MovieDetailsActivity"
+            android:parentActivityName=".MoviesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mk.ukim.finki.students.moviesomdb.MoviesActivity" />
+        </activity>
+        <activity android:name=".MoviesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
